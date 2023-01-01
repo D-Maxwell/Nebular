@@ -1,0 +1,81 @@
+body{
+  overflow: hidden;
+}
+
+
+
+div#desktop{
+  background: url("assets/bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+body > div, div#desktop > div{
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+
+div#desktop > div *{
+  pointer-events: all !important;
+}
+
+div#desktop, div#desktop > div{
+  position: absolute;
+  /* width: 100%;
+  height: 100%; */
+}
+
+
+div#start{
+  height: 100vh;
+  align-items: center;
+}
+
+/* div#start div{
+  padding: 8px;
+} */
+
+div#start div i{
+  /* margin: 2vmin; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  border-top: 2px solid white;
+  border-right: 2px solid white;
+  border-radius: 50%;
+  transform: translateX(-14px) rotate(45deg);
+  opacity: 0.25;
+  transition: 0.5s ease;
+}
+
+div#start div:hover i{
+  transform: translateX(14px) rotate(calc(360deg + 45deg));
+  /* transform: translateX(14px) rotate(45deg); */
+  opacity: 1;
+  /* animation: spin 1s infinite linear; */
+}
+
+@keyframes spin {
+  from{
+    transform: translateX(14px) rotate(45deg);
+  }
+  to{
+    transform: translateX(14px) rotate(calc(360deg + 45deg));
+  }
+}
+
+div#start div i::before{
+  content: '';
+  position: absolute;
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+  border-radius: inherit;
+  background-color: white;
+  z-index: 1;
+}
